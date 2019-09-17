@@ -3,25 +3,28 @@ package com.ecommerce.microcommerce.model;
 
 import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Min;
 
 @Entity
-@JsonFilter("myDynamicFilter") //bean accepte le filtre dynamique
 public class Product {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Length( min = 2, max = 40)
     private  String name;
+    @Min(value = 1)
     private int price;
 
-   // @JsonIgnore
+    @JsonIgnore
     private int purchasingPrice;
 
-
+    public Product(){}
 
     public Product(int id, String name, int price, int buyingPrice) {
         this.id = id;

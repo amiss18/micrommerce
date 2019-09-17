@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-@Repository
-public class ProductDaoImpl implements  ProductDao {
+//@Repository
+public class ProductDaoImpl {//implements  ProductDao {
 
     public static List<Product>products=new ArrayList<>();
 
@@ -18,7 +18,7 @@ public class ProductDaoImpl implements  ProductDao {
         products.add(new Product(3, new String("Table de Ping Pong"), 750, 700));
 
     }
-
+/*
     @Override
     public List<Product> findAll() {
         return products;
@@ -45,6 +45,6 @@ public class ProductDaoImpl implements  ProductDao {
         return 1;
 
     }
-
+*/
 
 }
